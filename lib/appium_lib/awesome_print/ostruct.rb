@@ -7,7 +7,8 @@
 # See LICENSE file or http://www.opensource.org/licenses/mit-license.php
 #------------------------------------------------------------------------------
 
-if defined?(OpenStruct)
+if defined?(OpenStruct) &&
+    Gem::Version.new(AwesomePrint.version) < Gem::Version.new("1.6.0") # Included in awesome_print 1.6.0
   module AwesomePrint
     module OpenStruct
       def self.included(base)
